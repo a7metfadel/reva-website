@@ -1,0 +1,475 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <link rel="preload" href="{% static 'fonts/SomarSans-Regular.woff2' %}" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="{% static 'fonts/SomarSans-Bold.woff2' %}" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="{% static 'fonts/SomarSans-Medium.woff2' %}" as="font" type="font/woff2" crossorigin>
+    <title>RevaPharma-Home</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="" name="keywords">
+    <meta content="" name="description">
+
+    <!-- Favicon -->
+    <link href="{% static 'img/icon.svg' %}" rel="icon" type="image/svg+xml">
+    <link href="{% static 'img/icon.svg' %}" rel="apple-touch-icon">
+
+    <!-- Icon Font Stylesheet -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link href="{% static 'lib/animate/animate.min.css' %}" rel="stylesheet">
+    <link href="{% static 'lib/owlcarousel/assets/owl.carousel.min.css' %}" rel="stylesheet">
+    <link href="{% static 'lib/tempusdominus/css/tempusdominus-bootstrap-4.min.css' %}" rel="stylesheet" />
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="{% static 'css/new_bootstrap.min.css' %}" rel="stylesheet">
+    <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
+
+    <!-- Template Stylesheet -->
+    <link href="{% static 'css/new_style.css' %}" rel="stylesheet">
+    <link href="{% static 'css/style.css' %}" rel="stylesheet">
+</head>
+
+<body>
+    <!-- Spinner Start -->
+    <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+        <div class="spinner-grow text-primary" style="width: 3rem; height: 3rem;" role="status">
+            <span class="sr-only">Loading...</span>
+        </div>
+    </div>
+    <!-- Spinner End -->
+    <!-- Brand Start -->
+    <div class="container-fluid bg-primary text-white pt-4 pb-5">
+        <div class="container pb-2">
+            <div class="d-flex align-items-center justify-content-between flex-wrap">
+                <div class="d-flex mb-3 mb-lg-0">
+                    <i class="bi bi-telephone-inbound fs-2"></i>
+                    <div class="ms-3">
+                        <h5 class="text-white mb-0">Call Now</h5>
+                        <span>+90 537 868 0830</span>
+                    </div>
+                </div>
+                <div class="d-flex">
+                    <i class="bi bi-envelope fs-2"></i>
+                    <div class="ms-3">
+                        <h5 class="text-white mb-0">Mail Now</h5>
+                        <span>e-marketing@e-revapharma.com</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Brand End -->
+
+
+    <!-- Navbar Start -->
+    <div class="container-fluid sticky-top">
+        <div class="container">
+            <nav class="navbar navbar-expand-lg navbar-light bg-white py-lg-0 px-lg-3">
+                <div class="d-lg-none">
+                    <a href="{% url 'home' %}" class="navbar-brand d-flex align-items-center px-4 px-lg-5">
+                        <h1 class="m-0 text-primary d-flex align-items-center">
+                            <img src="{% static 'img/icon.svg' %}" alt="REVA PHARMA Logo" style="height: 65px; margin-right: 0px;">
+                            REVA <span class="m-0 d-flex align-items-center" style="color: #3d3e40;">PHARMA</span>
+                        </h1>
+                    </a>
+                </div>
+                <div class="ms-auto d-none d-lg-flex">
+                    <a href="{% url 'home' %}" class="navbar-brand d-flex align-items-center px-4 px-lg-5">
+                        <h1 class="m-0 text-primary d-flex align-items-center">
+                            <img src="{% static 'img/icon.svg' %}" alt="REVA PHARMA Logo" style="height: 65px; margin-right: 0px;">
+                            REVA <h1 class="m-0 d-flex align-items-center" style="color: #3d3e40;">PHARMA</h1>
+                        </h1>
+                    </a>
+                </div>
+                <button class="navbar-toggler me-4" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarCollapse">
+                    <div class="navbar-nav ms-auto p-4 p-lg-0">
+                        <a href="{% url 'home' %}" class="nav-item nav-link active">Home</a>
+                        <div class="nav-item dropdown">
+                            <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Services</a>
+                            <div class="dropdown-menu rounded-0 rounded-bottom m-0">
+                                <a href="{% url 'job_catalog' %}" class="dropdown-item">Job Vacancies</a>
+                                <a href="{% url 'report' %}" class="dropdown-item">Report</a>
+                            </div>
+                        </div>
+                        <a href="{% url 'product_catalog' %}" class="nav-item nav-link">Products</a>
+                        <a href="{% url 'about' %}" class="nav-item nav-link ">About</a>
+                        <a href="{% url 'contact' %}" class="nav-item nav-link">Contact</a>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </div>
+    <!-- Navbar End -->
+
+
+    <!-- Carousel Start -->
+    <div class="container-fluid header-carousel px-0 mb-5">
+        <div id="header-carousel" class="carousel slide carousel-fade" data-bs-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img class="w-100" src="{% static 'img/02.jpg' %}" alt="Image">
+                    <div class="carousel-caption">
+                        <div class="container">
+                            <div class="row justify-content-start">
+                                <div class="col-lg-7 text-start">
+                                    <h1 class="display-1 text-white animated slideInRight mb-3"> Laboratory Department</h1>
+                                    <p class="mb-5 animated slideInRight">Quality Assurance Laboratories ensure product conformity to modern laboratory standards.</p>
+                                    <a href="" class="btn btn-primary py-3 px-5 animated slideInRight">Explore More</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img class="w-100" src="{% static 'img/01.jpg' %}" alt="Image">
+                    <div class="carousel-caption">
+                        <div class="container">
+                            <div class="row justify-content-end">
+                                <div class="col-lg-7 text-end">
+                                    <h1 class="display-1 text-white animated slideInLeft mb-3">Production Department</h1>
+                                    <p class="mb-5 animated slideInLeft">Production processes are carried out in accordance with the latest good manufacturing guidelines <span style="color: #0855f0;">GMP</span></p>
+                                    <a href="" class="btn btn-primary py-3 px-5 animated slideInLeft">Explore More</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+               <div class="carousel-item">
+                    <img class="w-100" src="{% static 'img/04.jpg' %}" alt="Image">
+                    <div class="carousel-caption">
+                        <div class="container">
+                            <div class="row justify-content-start">
+                                <div class="col-lg-7 text-start">
+                                    <h1 class="display-1 text-white animated slideInRight mb-3">Quality Control Department</h1>
+                                    <p class="mb-5 animated slideInRight">Materials are received, delivered and stored in accordance with good storage practices. <span  style="color: #0855f0;"> GSP   </span>.</p>
+                                    <a href="" class="btn btn-primary py-3 px-5 animated slideInRight">Explore More</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                 <div class="carousel-item">
+                    <img class="w-100" src="{% static 'img/05.jpg' %}" alt="Image">
+                    <div class="carousel-caption">
+                        <div class="container">
+                            <div class="row justify-content-start">
+                                <div class="col-lg-7 text-start">
+                                    <h1 class="display-1 text-white animated slideInRight mb-3">Warehouse Department</h1>
+                                    <p class="mb-5 animated slideInRight">The Quality Assurance Department works to follow up on the correct and proper implementation of all operations in accordance with the approved quality management system.<span  style="color: #0855f0;">QMS</span></p>
+                                    <a href="" class="btn btn-primary py-3 px-5 animated slideInRight">Explore More</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img class="w-100" src="{% static 'img/03.jpg' %}" alt="Image">
+                    <div class="carousel-caption">
+                        <div class="container">
+                            <div class="row justify-content-start">
+                                <div class="col-lg-7 text-start">
+                                    <h1 class="display-1 text-white animated slideInRight mb-3">Administration Department</h1>
+                                    <p class="mb-5 animated slideInRight">A distinguished and effective team to manage the pharmaceutical process <span  style="color: #0855f0;">in all its stages.</span>.</p>
+                                    <a href="" class="btn btn-primary py-3 px-5 animated slideInRight">Explore More</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#header-carousel" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#header-carousel" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+    </div>
+    <!-- Carousel End -->
+
+    <!-- Production_Line Start -->
+    <div class="container-xxl py-5">
+        <div class="container">
+            
+            <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 600px;">
+                <p class="d-inline-block border rounded-pill py-1 px-4">Production Lines</p>
+                <h1>3 Production lines</h1>
+            </div>
+            <div class="row g-4">
+                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                    <div class="service-item bg-light rounded p-5 h-auto">
+                        <div class="d-inline-flex align-items-center justify-content-center bg-white rounded-circle mb-4" style="width: 65px; height: 65px;">
+                            <img src="{% static 'icon/icon_ampoule.png' %}" alt="Tablets Production Line" style="width: 40px; height: 40px;">
+                        </div>
+                        <h4 class="mb-3">Penicillin's Production Line</h4>
+                        <a class="btn" href="{% url 'benicillins' %}"><i class="fa fa-plus text-primary me-3"></i>Read More</a>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
+                    <div class="service-item bg-light rounded p-5 h-auto">
+                        <div class="d-inline-flex align-items-center justify-content-center bg-white rounded-circle mb-4" style="width: 65px; height: 65px;">
+                            <img src="{% static 'icon/icon_antiseptic.png' %}" alt="Capsules Production Line" style="width: 40px; height: 40px;">
+                        </div>
+                        <h4 class="mb-3">General production line</h4>
+                        <a class="btn" href="{% url 'General' %}"><i class="fa fa-plus text-primary me-3"></i>Read More</a>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                    <div class="service-item bg-light rounded p-5 h-auto">
+                        <div class="d-inline-flex align-items-center justify-content-center bg-white rounded-circle mb-4" style="width: 65px; height: 65px;">
+                            <img src="{% static 'icon/icon_capsules.png' %}" alt="Tablets Production Line" style="width: 40px; height: 40px;">
+                        </div>
+                        <h4 class="mb-3">Cephalosporins Production Line</h4>
+                        <a class="btn" href="{% url 'cephalosporins' %}"><i class="fa fa-plus text-primary me-3"></i>Read More</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Production_Line End -->
+     
+
+
+    
+    <!-- counter Start -->
+    <div class="container-fluid header bg-primary p-0 mb-5">
+        <div class="row g-0 align-items-center justify-content-center text-center">
+            <div class="col-lg-6 p-5 wow fadeIn" data-wow-delay="0.1s">
+                <h1 class="display-4 text-white mb-5 text-center">We Have The Most Complete Medicine and Servires.</h1>
+                <div class="row g-4 justify-content-center">
+                    <div class="col-sm-4">
+                        <div class="border-start border-light ps-4">
+                            <h2 class="text-white mb-1" data-toggle="counter-up">36</h2>
+                            <p class="text-light mb-0">Administrators and supervisors</p>
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="border-start border-light ps-4">
+                            <h2 class="text-white mb-1" data-toggle="counter-up">210</h2>
+                            <p class="text-light mb-0">Medical Products</p>
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="border-start border-light ps-4">
+                            <h2 class="text-white mb-1" data-toggle="counter-up">57</h2>
+                            <p class="text-light mb-0">Pharmacist and Chemist</p>
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="border-start border-light ps-4">
+                            <h2 class="text-white mb-1" data-toggle="counter-up">236</h2>
+                            <p class="text-light mb-0">worker and technician</p>
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="border-start border-light ps-4">
+                            <h2 class="text-white mb-1" data-toggle="counter-up">329</h2>
+                            <p class="text-light mb-0">Total WorkForce</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- counter End -->
+
+    
+    <!-- About Start -->
+    <div class="container-xxl py-5">
+        <div class="container">
+            <div class="row g-5">
+                <div class="col-lg-6 wow fadeIn" data-wow-delay="0.1s">
+                    <div class="d-flex flex-column">
+                        <img class="img-fluid rounded w-75 align-self-end" src="{% static 'img/ISO-522.jpg' %}" alt="" 
+                            style="border: 3px solid #000;">
+                        <img class="img-fluid rounded w-50 bg-white pt-3 pe-3" src="{% static 'img/ISO-348.jpg' %}" alt="" 
+                            style="margin-top: -25%; border: 3px solid #000;">
+                    </div>
+                </div>
+                <div class="col-lg-6 wow fadeIn" data-wow-delay="0.5s">
+                    <p class="d-inline-block border rounded-pill py-1 px-4">About Us</p>
+                    <h1 class="mb-4">Why You Should Trust Us?</h1>
+                    <p>Quality at Reva Pharma was not just a goal, but a belief we adopted in all stages of our work.
+                        At Reva Pharma, we realize the importance of quality in the pharmaceutical industry. </p>
+                   
+                    
+                    <div class="d-flex align-items-center mb-3">
+                        <i class="far fa-check-circle text-primary me-3"></i>
+                        <a href="https://www.iso.org/standard/63787.html" class="nav-link p-0">ISO 45001 Occupational Health and Safety Management Certification</a>
+                    </div>
+                    
+                    <div class="d-flex align-items-center mb-3">
+                        <i class="far fa-check-circle text-primary me-3"></i>
+                        <a href="https://www.iso.org/standard/60857.html" class="nav-link p-0">ISO 14001 Environmental Management Certification</a>
+                    </div>
+                    
+                    <div class="d-flex align-items-center mb-3">
+                        <i class="far fa-check-circle text-primary me-3"></i>
+                        <a href="https://www.iso.org/standard/62085.html" class="nav-link p-0">ISO 9001 Certification in Quality Management</a>
+                    </div>
+                    
+                    <a class="btn btn-primary rounded-pill py-3 px-5 mt-3" href="{% url 'about' %}">Read More</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- About End -->
+    <!-- Footer Start -->
+    <div class="container-fluid bg-dark text-light footer mt-5 pt-5 wow fadeIn" data-wow-delay="0.1s">
+        <div class="container py-5">
+            <div class="row g-5">
+                <div class="col-lg-3 col-md-6">
+                    <h5 class="text-light mb-4">Address</h5>
+                    <p class="mb-2"><i class="fa fa-map-marker-alt me-3"></i>Syria,Aleppo</p>
+                    <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>+90 537 868 0830</p>
+                    <p class="mb-2"><i class="fa fa-envelope me-3"></i>e-marketing@e-revapharma.com</p>
+                    <div class="d-flex pt-2">
+                        <a class="btn btn-outline-light btn-social rounded-circle" href="https://x.com/revapharma__"><i class="fab fa-twitter"></i></a>
+                        <a class="btn btn-outline-light btn-social rounded-circle" href="https://www.facebook.com/revapharma/"><i class="fab fa-facebook-f"></i></a>
+                        <a class="btn btn-outline-light btn-social rounded-circle" href="https://www.instagram.com/revapharma_/"><i class="fab fa-instagram"></i></a>
+                        <a class="btn btn-outline-light btn-social rounded-circle" href="https://www.linkedin.com/company/e-reva-pharma/"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <h5 class="text-light mb-4">Services</h5>
+                    <a class="btn btn-link" href="{% url 'job_catalog' %}">Job Vacancies</a>
+                    <a class="btn btn-link" href="">Report an Issue</a>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <h5 class="text-light mb-4">Quick Links</h5>
+                    <a class="btn btn-link" href="">About Us</a>
+                    <a class="btn btn-link" href="">Contact Us</a>
+                    <a class="btn btn-link" href="">Our Services</a>
+                    <a class="btn btn-link" href="">Terms & Condition</a>
+                    <a class="btn btn-link" href="">Support</a>
+                </div>
+                
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="copyright">
+                <div class="row">
+                    <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
+                        &copy; <a class="border-bottom" href="#">Reva pharma website</a>, All Right Reserved.
+                    </div>
+                    <div class="col-md-6 text-center text-md-end">
+                        <!--/*** This template is free as long as you keep the footer author’s credit link/attribution link/backlink. If you'd like to use the template without the footer author’s credit link/attribution link/backlink, you can purchase the Credit Removal License from "https://htmlcodex.com/credit-removal". Thank you for your support. ***/-->
+                        Designed By <a class="border-bottom" href="https://htmlcodex.com">HTML Codex</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Footer End -->
+
+
+
+    <!-- Back to Top -->
+    <a href="#" class="btn btn-lg btn-primary btn-lg-square rounded-circle back-to-top"><i class="bi bi-arrow-up"></i></a>
+
+
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- Library Scripts -->
+    <script src="{% static 'lib/wow/wow.min.js' %}"></script>
+    <script src="{% static 'lib/easing/easing.min.js' %}"></script>
+    <script src="{% static 'lib/waypoints/waypoints.min.js' %}"></script>
+    <script src="{% static 'lib/owlcarousel/owl.carousel.min.js' %}"></script>
+    <script src="{% static 'lib/tempusdominus/js/moment.min.js' %}"></script>
+    <script src="{% static 'lib/tempusdominus/js/moment-timezone.min.js' %}"></script>
+    <script src="{% static 'lib/tempusdominus/js/tempusdominus-bootstrap-4.min.js' %}"></script>
+    
+    <!-- Custom Scripts -->
+    <script src="{% static 'js/main.js' %}"></script>
+    <script src="{% static 'js/new_main.js' %}"></script>
+
+    <script>
+        // Initialize WOW.js
+        new WOW().init();
+        
+        // Initialize Bootstrap components
+        $(document).ready(function() {
+            // Enable tooltips
+            var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
+            var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+                return new bootstrap.Tooltip(tooltipTriggerEl)
+            });
+            
+            // Enable popovers
+            var popoverTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="popover"]'))
+            var popoverList = popoverTriggerList.map(function (popoverTriggerEl) {
+                return new bootstrap.Popover(popoverTriggerEl)
+            });
+
+            // Counter animation with Intersection Observer
+            const animateCounter = (element) => {
+                var $this = $(element);
+                var countTo = parseInt($this.text());
+                
+                $({ countNum: 0 }).animate({
+                    countNum: countTo
+                }, {
+                    duration: 2000,
+                    easing: 'linear',
+                    step: function() {
+                        $this.text(Math.floor(this.countNum));
+                    },
+                    complete: function() {
+                        $this.text(this.countNum);
+                    }
+                });
+            };
+
+            // Create Intersection Observer
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting && !entry.target.hasAttribute('data-counted')) {
+                        animateCounter(entry.target);
+                        entry.target.setAttribute('data-counted', 'true');
+                    }
+                });
+            }, {
+                threshold: 0.5 // Trigger when 50% of the element is visible
+            });
+
+            // Observe all counter elements
+            $('[data-toggle="counter-up"]').each(function() {
+                observer.observe(this);
+            });
+        });
+    </script>
+
+    <style>
+    .read-more-link {
+        color: #0d6efd;
+        text-decoration: none;
+        cursor: pointer;
+        display: inline-block;
+        margin-top: 10px;
+    }
+
+    .read-more-link:hover {
+        text-decoration: underline;
+    }
+    </style>
+
+
+<script>
+    (function(){if(!window.chatbase||window.chatbase("getState")!=="initialized"){window.chatbase=(...arguments)=>{if(!window.chatbase.q){window.chatbase.q=[]}window.chatbase.q.push(arguments)};window.chatbase=new Proxy(window.chatbase,{get(target,prop){if(prop==="q"){return target.q}return(...args)=>target(prop,...args)}})}const onLoad=function(){const script=document.createElement("script");script.src="https://www.chatbase.co/embed.min.js";script.id="wqSOc9UXRhH3ptSs5FwY2";script.domain="www.chatbase.co";document.body.appendChild(script)};if(document.readyState==="complete"){onLoad()}else{window.addEventListener("load",onLoad)}})();
+    </script>
+</body>
+
+</html>
